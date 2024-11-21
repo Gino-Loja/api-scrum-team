@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import "./loadEnvironment.mjs";
 import "express-async-errors";
-import usuarios from "./rutas/usuarios.mjs";
+import clientes from "./rutas/clientes.mjs";
 import productos from "./rutas/productos.mjs";
 import pedidos from "./rutas/pedidos.mjs";
 const PORT = process.env.PORT || 8080 ;
@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 // carga las rutas
-app.use("/usuarios", usuarios);
+app.use("/clientes", clientes);
 app.use('/productos', productos);
 app.use('/pedidos', pedidos);
 app.use((err, _req, res, next) => {

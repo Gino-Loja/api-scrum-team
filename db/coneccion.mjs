@@ -1,14 +1,16 @@
-import mysql from 'mysql2/promise';
+
+import pg from "pg";
+import dotenv from "dotenv";
+dotenv.config();
 
 // Create the connection to database
-
   // Create the connection to database
-const connection =  mysql.createPool({
-  host: '173.249.41.129',
-  user: 'root',
-  database: 'ferreteria',
-  password: '>4KjP15[F6Zx',
-  port: 3306,
+const connection =  new pg.Pool({
+  host:  process.env.DB_HOST,
+  user:  process.env.DB_USER,
+  database:  process.env.DB_NAME,
+  password: process.env.DB_PASSWORD,
+  port:  process.env.DB_PORT,
 });
 
 const testConnection = async () => {

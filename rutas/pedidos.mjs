@@ -1,5 +1,5 @@
 import express from 'express';
-import connection from '../mongo/coneccion.mjs';
+import connection from "../db/coneccion.mjs";
 
 const router = express.Router();
 
